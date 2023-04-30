@@ -1,29 +1,43 @@
 
 fun main(args: Array<String>) {
-    val str: String? = "ABC"
-    //println(str?.length)
+    // 타입변환을 명시적으로 해주자
+//    val number1 = 3
+//    val number2: Long = number1.toLong()
+//    println(number2)
 
-    println(startsWith2("BC"))
+    // number1이 null일 수 있으므로 safeCall, Elvis연산자!!
+    /*
+    val number1: Int? = 3
+    val number2: Long = number1?.toLong() ?: 0L
+    println(number2)
+     */
+
+    val person = Person("최태현", 100)
+    println("이름 : ${person.name}")
+
+    val name = "양현"
+    println("이름 : ${name}")
+
+    val name2 = "양미진"
+    var str = """
+        ABCD
+        EFG
+        ${name2}
+    """.trimIndent()
+    println(str)
+
+    var str2 = "ABC"
+    println(str2[0])
+    println(str2[2])
+
+    printAgeIfPerson2(Person("Kim", 240))
 }
 
-// null이 들어오면 예외처리
-fun startsWithB(str: String?): Boolean {
-    return str?.startsWith("A")
-        ?: throw IllegalAccessException("null이 들어왔습니다")
+fun printAgeIfPerson2(obj: Any?) {
+    // obj가 null이 아니면 Person으로 변환, null이면 전체가 null
+    val person = obj as? Person
+    println("My age is ${person?.age} and my Name is ${person?.name}")
+
 }
 
-// null이 들어와도 되는경우
-fun startsWithB2(str: String?): Boolean? {
-    return str?.startsWith("A")
-}
-
-// null이 들어오면 false
-fun startsWithB3(str: String?): Boolean {
-    return str?.startsWith("A") ?: false
-}
-
-// 절대 null이 들어올 수 없는 경우 (null이 아님을 확신해야함)
-fun startsWith2(str: String?): Boolean {
-    return str!!.startsWith("A")
-}
 
