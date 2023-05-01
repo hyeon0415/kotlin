@@ -1,43 +1,41 @@
 
 fun main(args: Array<String>) {
-    // 타입변환을 명시적으로 해주자
-//    val number1 = 3
-//    val number2: Long = number1.toLong()
-//    println(number2)
+//    val money1 = JavaMoney(2_000L)
+//    val money2 = JavaMoney(1_000L)
+//
+//    if(money1 > money2) {
+//        println("money1이 money2보다 금액이 큽니다.")
+//    } else {
+//        println("아님 말고")
+//    }
 
-    // number1이 null일 수 있으므로 safeCall, Elvis연산자!!
-    /*
-    val number1: Int? = 3
-    val number2: Long = number1?.toLong() ?: 0L
-    println(number2)
-     */
+//    val money1 = JavaMoney(1_000L)
+//    val money2 = money1
+//    val money3 = JavaMoney(1_000L)
+//
+//    println(money1 === money3)
+//
+//    println(money1 == money3)
+    //lazy 연산 ( 조건에서 앞에거가 맞으면 앞에거 실행하고 뒤에거 실행 안함 )
+//    if(fun1() || fun2()) {
+//        println("본문")
+//    }
 
-    val person = Person("최태현", 100)
-    println("이름 : ${person.name}")
+    val money1 = Money(1_000L)
+    val money2 = Money(2_000L)
 
-    val name = "양현"
-    println("이름 : ${name}")
-
-    val name2 = "양미진"
-    var str = """
-        ABCD
-        EFG
-        ${name2}
-    """.trimIndent()
-    println(str)
-
-    var str2 = "ABC"
-    println(str2[0])
-    println(str2[2])
-
-    printAgeIfPerson2(Person("Kim", 240))
+    // Kotlin은 객체마다 연산자를 직접 정의할 수 있다.
+    println(money1 + money2)
 }
 
-fun printAgeIfPerson2(obj: Any?) {
-    // obj가 null이 아니면 Person으로 변환, null이면 전체가 null
-    val person = obj as? Person
-    println("My age is ${person?.age} and my Name is ${person?.name}")
+fun fun11(): Boolean {
+    println("fun 1")
+    return true
+}
 
+fun fun22(): Boolean {
+    println("fun 2")
+    return false
 }
 
 
