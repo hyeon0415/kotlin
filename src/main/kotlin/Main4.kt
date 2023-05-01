@@ -10,7 +10,7 @@ fun validateScore(score: Int) {
 }
 
 // 함수에 : ?? 는 반환하는 타입을 지정하는거다.
-fun getPassOfFail(score: Int): String {
+fun getPassOrFail(score: Int): String {
     return if(score >= 50) {
         "P"
     } else {
@@ -55,7 +55,7 @@ fun startswithA(obj: Any): Boolean {
 fun judgeNumber(number: Int) {
     when (number) {
         1, 0, -1 -> println("어디서 많이 본 숫자")
-        else -> ("1, 0, 01이 아닙니다")
+        else -> println("1, 0, -1이 아닙니다")
     }
 }
 
