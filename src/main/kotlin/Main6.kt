@@ -10,7 +10,7 @@ import java.lang.NumberFormatException as NumberFormatException1
 //}
 fun main() {
     val printer = FilePrinter()
-    printer.readFile()
+    printer.readFile("./a.txt")
 }
 
 fun parseIntoOrThrow2(str: String): Int? {
