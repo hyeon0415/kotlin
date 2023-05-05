@@ -8,6 +8,10 @@ import java.lang.NumberFormatException as NumberFormatException1
 //        throw IllegalArgumentException("주어진 ${str}는 숫자가 아닙니다")
 //    }
 //}
+fun main() {
+    val printer = FilePrinter()
+    printer.readFile()
+}
 
 fun parseIntoOrThrow2(str: String): Int? {
     return try {
