@@ -1,30 +1,45 @@
 
 fun main(){
-//    val numbers = listOf(1L, 2L, 3L)
-    // Kotlin의 반복문(for)은 in으로 설정
-//    for (number in numbers) {
-//        println(number)
-//    }
+//    max(3, 2)
+//    repeat("양현", 4, false)
+//    printNameAndGender(name = "양현", gender = "MALE")
+//    printAll("A", "B", "C")
+    val array = arrayOf("A", "B", "C")
+    // 가변인자는 앞에 *를 붙여야함
+    printAll(*array)
+}
 
-    // 1~3까지 출력
-//    for(i in 1..3) {
-//        println(i)
+//fun max(a: Int, b: Int): Int {
+//    return if (a > b) {
+//       a
+//    } else {
+//       b
 //    }
+//}
 
-    // 3 -> 1까지 내려가는 출력
-//    for(i in 3 downTo 1) {
-//        println(i)
-//    }
+//fun max(a: Int, b: Int) = if (a > b) a else b
 
-    // 1 ~ 5까지 2씩 올라감
-//    for(i in 1..5 step 2) {
-//        println(i)
-//    }
+fun repeat2(
+    str: String,
+    num: Int = 3,
+    useNewLine: Boolean = true
+) {
+    for (i in 1..num) {
+        if (useNewLine) {
+            println(str)
+        } else {
+            print(str)
+        }
+    }
+}
 
-    // i는 가변으로 설정(밑에서 변함)
-    var i = 1
-    while (i <= 3) {
-        println(i)
-        i++
+fun printNameAndGender2(name: String, gender: String) {
+    println(name)
+    println(gender)
+}
+
+fun printAll2(vararg strings: String) {
+    for(str in strings) {
+        println(str)
     }
 }

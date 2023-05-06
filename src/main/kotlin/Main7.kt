@@ -24,24 +24,24 @@ fun main() {
 
 //반환타입은 Unit이라 생략가능
 // num 기본값은 3, useNewLine 기본값은 true라는 설정 = defalut parameter
-//fun repeat(
-//    str: String,
-//    num: Int = 3,
-//    useNewLine: Boolean = true
-//) {
-//    for(i in 1..num) {
-//        if (useNewLine) {
-//            println(str)
-//        } else {
-//            print(str)
-//        }
-//    }
-//}
+fun repeat(
+    str: String,
+    num: Int = 3,
+    useNewLine: Boolean = true
+) {
+    for(i in 1..num) {
+        if (useNewLine) {
+            println(str)
+        } else {
+            print(str)
+        }
+    }
+}
 
-//fun printNameAndGender(name: String, gender: String) {
-//    println(name)
-//    println(gender)
-//}
+fun printNameAndGender(name: String, gender: String) {
+    println(name)
+    println(gender)
+}
 
 fun printAll(vararg strings: String) {
     for (str in strings) {
