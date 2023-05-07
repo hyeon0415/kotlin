@@ -1,45 +1,44 @@
+import java.lang.IllegalArgumentException
 
 fun main(){
-//    max(3, 2)
-//    repeat("양현", 4, false)
-//    printNameAndGender(name = "양현", gender = "MALE")
-//    printAll("A", "B", "C")
-    val array = arrayOf("A", "B", "C")
-    // 가변인자는 앞에 *를 붙여야함
-    printAll(*array)
+
+    Person2()
 }
 
-//fun max(a: Int, b: Int): Int {
-//    return if (a > b) {
-//       a
-//    } else {
-//       b
-//    }
-//}
-
-//fun max(a: Int, b: Int) = if (a > b) a else b
-
-fun repeat2(
-    str: String,
-    num: Int = 3,
-    useNewLine: Boolean = true
+class Person2 (
+     name: String = "yh",
+    var age: Int = 21
 ) {
-    for (i in 1..num) {
-        if (useNewLine) {
-            println(str)
-        } else {
-            print(str)
+
+//    val name = name
+//        get() = field.uppercase()
+
+//    fun getUppercaseName(): String = this.name.uppercase()
+
+    var name: String = name
+        set(value) {
+            field = value.uppercase()
         }
-    }
-}
 
-fun printNameAndGender2(name: String, gender: String) {
-    println(name)
-    println(gender)
-}
-
-fun printAll2(vararg strings: String) {
-    for(str in strings) {
-        println(str)
+    init {
+        if (age <= 0) {
+            throw IllegalArgumentException("나이는 ${age} 일 수 없습니다")
+        }
+        println("초기화 블록")
+        println(isAdult)
+        println("${this.name}")
     }
+
+//    constructor(name: String): this(name, 1) {
+//        println("첫 번째 부생성자")
+//    }
+//    constructor(): this("홍길동") {
+//        println("두 번째 부생성자")
+//    }
+
+//    fun isAdult(): Boolean = this.age >= 20
+
+    val isAdult: Boolean
+        get() = this.age >= 20
+
 }
